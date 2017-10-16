@@ -35,6 +35,7 @@
 		<commons-beanutils.version>1.9.2</commons-beanutils.version>
 		<hibernate-validator.version>5.0.2.Final</hibernate-validator.version>
 		<swagger2.version>2.7.0</swagger2.version>
+		<shiro.version>1.4.0</shiro.version>
 	</properties>
 
 
@@ -56,6 +57,12 @@
 			<dependency>
 				<groupId>com.framework.common</groupId>
 				<artifactId>common-web</artifactId>
+				<version>${framework.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.framework.common</groupId>
+				<artifactId>common-security</artifactId>
 				<version>${framework.version}</version>
 			</dependency>
 
@@ -257,8 +264,8 @@
 				<artifactId>hibernate-validator</artifactId>
 				<version>${hibernate-validator.version}</version>
 			</dependency>
-			
-			
+
+
 			<!-- swagger -->
 			<dependency>
 				<groupId>io.springfox</groupId>
@@ -269,6 +276,23 @@
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
 				<version>${swagger2.version}</version>
+			</dependency>
+
+			<!-- shiro -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-core</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-web</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-spring</artifactId>
+				<version>${shiro.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -326,11 +350,11 @@
 	</distributionManagement>
 
 	<build>
-		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>  
-	    <scriptSourceDirectory>${basedir}/src/main/resources</scriptSourceDirectory>  
-	    <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>  
-	    <outputDirectory>${basedir}/target/classes</outputDirectory>  
-	    <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory> 
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+		<scriptSourceDirectory>${basedir}/src/main/resources</scriptSourceDirectory>
+		<testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+		<outputDirectory>${basedir}/target/classes</outputDirectory>
+		<testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
